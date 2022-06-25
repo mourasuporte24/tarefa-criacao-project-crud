@@ -1,0 +1,15 @@
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Adenilson Moura','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '1982-07-13T20:50:07.12345Z',0);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Paolo Moura','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2022-07-13T20:50:07.12345Z',2);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Gleiciane Godin','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2000-07-13T20:50:07.12345Z',6);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Ana Paula','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2000-07-13T20:50:07.12345Z',1);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Pablo Otavio','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2000-07-13T20:50:07.12345Z',2);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Flavia Galucio','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z',4);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Paulo Henrique','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2000-07-13T20:50:07.12345Z',8);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Antonio de Jesus','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2018-07-13T20:50:07.12345Z',5);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Maria Nazare','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2019-07-13T20:50:07.12345Z',2);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('walmir Pantoja Moura','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2021-07-13T20:50:07.12345Z',6);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Billy Paul','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2022-07-13T20:50:07.12345Z',5);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Adilson Moura','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2024-07-13T20:50:07.12345Z',6);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Carme Bastos','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2021-07-13T20:50:07.12345Z',1);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('henrique Duarte','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '2022-07-13T20:50:07.12345Z',3);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values('Fadia Maria','518.660.302-30',3000.0,TIMESTAMP WITH TIME ZONE '1980-02-21T20:50:07.12345Z',2);
