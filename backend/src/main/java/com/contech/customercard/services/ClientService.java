@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.contech.customercard.dto.ClientDTO;
 import com.contech.customercard.entities.Client;
 import com.contech.customercard.repositories.ClientRepository;
-import com.contech.customercard.services.exceptions.EntityNotFoundException;
+import com.contech.customercard.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class ClientService {
@@ -30,7 +32,7 @@ public class ClientService {
 	@Transactional(readOnly = true)
 	public ClientDTO findById(Long id) {
 		Optional<Client> ObjOptional = repository.findById(id);
-		Client entity = ObjOptional.orElseThrow(() -> new EntityNotFoundException("Id não Encontrado."));
+		Client entity = ObjOptional.orElseThrow(() -> new ResourceNotFoundException("Id não Encontrado."));
 		return new ClientDTO(entity);
 
 	}
@@ -46,6 +48,27 @@ public class ClientService {
 		entity.setName(dto.getName());
 		entity = repository.save(entity);
 		return new ClientDTO(entity);
+
+	}
+
+	@Transactional
+	public ClientDTO update(Long id, ClientDTO dto) {
+		try {
+			Client client = repository.getReferenceById(id);
+			client.setBirthDate(dto.getBirthDate());
+			client.setName(dto.getName());
+			client.setCpf(dto.getCpf());
+			client.setIncome(dto.getIncome());
+			client.setChildren(dto.getChildren());
+			client = repository.save(client);
+			return new ClientDTO(client);
+		} 
+		catch (EntityNotFoundException e) {
+			
+			throw new ResourceNotFoundException("Id Not Found " + id);
+			
+
+		}
 
 	}
 
