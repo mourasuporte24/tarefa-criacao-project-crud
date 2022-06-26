@@ -36,7 +36,7 @@ public class ClientDTO implements Serializable {
 		this.children = children;
 	}
 
-	//Construtor que recebeu a entidade - (Client) e povuou o ClientDTO..
+	// Construtor que recebeu a entidade - (Client) e povuou o ClientDTO..
 	public ClientDTO(Client entity) {
 		this.id = entity.getId();
 		this.name = entity.getName();
