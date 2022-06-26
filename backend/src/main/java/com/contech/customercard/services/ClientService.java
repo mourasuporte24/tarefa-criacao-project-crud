@@ -7,12 +7,15 @@ import java.util.stream.Collectors;
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.contech.customercard.dto.ClientDTO;
 import com.contech.customercard.entities.Client;
 import com.contech.customercard.repositories.ClientRepository;
+import com.contech.customercard.services.exceptions.DataBaseException;
 import com.contech.customercard.services.exceptions.ResourceNotFoundException;
 
 @Service
@@ -62,11 +65,24 @@ public class ClientService {
 			client.setChildren(dto.getChildren());
 			client = repository.save(client);
 			return new ClientDTO(client);
-		} 
-		catch (EntityNotFoundException e) {
-			
+		} catch (EntityNotFoundException e) {
+
 			throw new ResourceNotFoundException("Id Not Found " + id);
-			
+
+		}
+
+	}
+
+	public void delete(Long id) {
+		try {
+			repository.deleteById(id);
+
+		} catch (EmptyResultDataAccessException e) {
+			throw new ResourceNotFoundException("Id Not Found" + id);
+
+		} catch (DataIntegrityViolationException e) {
+
+			throw new DataBaseException(" Data Cannot Be Tampered With " + id);
 
 		}
 
